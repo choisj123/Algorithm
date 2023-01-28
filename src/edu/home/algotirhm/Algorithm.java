@@ -109,4 +109,41 @@ public class Algorithm {
 	}
 	
 	
+	// 01.28
+	public String solution2(String[] seoul) {
+		String answer = "";
+	    for(int x = 0; x < seoul.length; x++){
+	    	if(seoul[x].equals("Kim")){
+	    		answer = "김서방은 " + x + "에 있다";    
+	        }
+	    }
+	    return answer;
+	}
+	
+	
+	public String solution3(String phone_number) {
+		String answer = "";
+	    char[] ch = phone_number.toCharArray();
+	        
+	    for(int i = 0; i < ch.length - 4; i++){
+	    	ch[i] = '*';
+	    }
+	        
+	    for(int i = 0; i < ch.length ; i++){
+	    	answer += ch[i];
+	    }
+	    return answer;
+	}
+	//toCharArray() / substring() --> 공부하기
+	
+	
+	public double solution(int[] arr) {
+        double answer = 0;
+        
+        for(int i = 0; i < arr.length; i++){
+            answer += arr[i];            
+        }
+        answer /= arr.length;
+        return answer;
+    }
 }
