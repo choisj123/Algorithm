@@ -146,4 +146,49 @@ public class Algorithm {
         answer /= arr.length;
         return answer;
     }
+
+
+
+	// 01.29
+	
+	public String solution(int num) {
+        
+        if (num % 2 == 0){
+            return "Even";
+        }else {
+            return "Odd";
+        }
+        
+        // return num % 2 == 0 ? "Even": "Odd";
+    }
+	
+	
+	public int solution2(int n) {
+        int answer = 0;
+        
+        for(int i = 1; i <= n; i ++){
+            if(n % i == 0){
+                answer += i;
+            }   
+        }
+        return answer;
+    }
+	
+	//못풀겠다.. 자릿수더하기
+	public int solution3(int n) {
+		int answer = 0;
+		String s = String.valueOf(n);
+        int[] arr = new int[s.length()];
+     
+        
+        for(int i = 0; i < s.length(); i++){
+            arr[i] = (int)s.charAt(i);
+            answer += arr[i];
+        }
+     return answer;
+
+	}
+
+
+
 }
