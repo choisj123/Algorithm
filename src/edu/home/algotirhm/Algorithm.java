@@ -31,7 +31,7 @@ public class Algorithm {
 			
 		}
 		System.out.println("45분 전 알람 : " + output / 60 + "시 " + output % 60 + "분");
-		
+		System.out.println("github연동 테스트");
 
 		
 	}
@@ -186,6 +186,8 @@ public class Algorithm {
             answer += arr[i];
         }
      return answer;
+     
+     // 연동 test
 
 	}
 
