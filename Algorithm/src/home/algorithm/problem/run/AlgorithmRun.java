@@ -34,8 +34,14 @@ public class AlgorithmRun {
 //		System.out.println("최소 공배수 : " + min);
 //		
 //		
-		System.out.println(a.solution(9, 2, 1, 3));
+		//System.out.println(a.solution(9, 2, 1, 3));
+		
+		System.out.println(a.solution("3141592", "271"));
+//		System.out.println(a.solution("500220839878", "7"));
+//		System.out.println(a.solution("10203", "15"));
 		
 	}
+	
+	
 
 }

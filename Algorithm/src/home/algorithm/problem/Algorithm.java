@@ -1,5 +1,8 @@
 package home.algorithm.problem;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
 
 public class Algorithm {
 
@@ -51,10 +54,53 @@ public class Algorithm {
         
        return answer ;
        
-       
 	}
 		
 		
+    /** 0608 크기가 작은 부분문자
+     * @param t
+     * @param p
+     * @return answer
+     */
+    public int solution(String t, String p) {
+        int answer = 0;
+        
+        String[] tArr = t.split("");
+        
+        List<String> tList = new ArrayList<>();
+        System.out.println(Arrays.toString(tArr));
+        String num = "";
+        
+        for(int i = 0; i < p.length(); i++) {
+        	
+        	num += tArr[i];
+        	
+        	if(num.length() == p.length()) {
+        		
+        		tArr[p.length()-p.length()] = null;
+        		System.out.println("num : " + num);
+        		
+        		tList.add(num);
+        	} 	
+        	System.out.println("tList:" + tList);
+        	
+        }
+        
+
+        
+        
+        for(String tt: tList) {
+        	
+        	if(Integer.parseInt(tt) <= Integer.parseInt(p)) {
+        		
+        		answer ++;
+        	}
+        	
+        }
+        
+        
+        return answer;
+    }
 	
 
 }
