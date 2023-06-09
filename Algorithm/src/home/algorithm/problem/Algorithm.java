@@ -67,27 +67,56 @@ public class Algorithm {
         
         String[] tArr = t.split("");
         
+        List<String> arrList = new ArrayList<>(Arrays.asList(tArr));
+        
         List<String> tList = new ArrayList<>();
+        
         System.out.println(Arrays.toString(tArr));
         String num = "";
         
-        for(int i = 0; i < p.length(); i++) {
+//        for(int i = 0; i < p.length(); i++) {
+//        	
+//        	num += arrList.get(i);
+//        	
+//        	if(num.length() == p.length()) {
+//        		
+//        		System.out.println("num : " + num);
+//        		arrList.remove(0);
+//        		tList.add(num);
+//        		num = "";
+//        		
+//        		System.out.println(arrList);
+//        		
+//        		
+//        	} 	
+//        	
+//        }
+        
+//        System.out.println("tList:" + tList);
+        
+        int i = 0;
+        
+        while(true) {
         	
-        	num += tArr[i];
+        	if(i==arrList.size()) break;
+        	
+        	num += arrList.get(i);
         	
         	if(num.length() == p.length()) {
         		
-        		tArr[p.length()-p.length()] = null;
         		System.out.println("num : " + num);
-        		
+        		arrList.remove(0);
         		tList.add(num);
+        		num = "";
+        		i -= p.length()+1;
+        		
+        		System.out.println(arrList);
         	} 	
-        	System.out.println("tList:" + tList);
         	
+        	i++;
         }
         
-
-        
+        System.out.println("tList:" + tList);
         
         for(String tt: tList) {
         	
