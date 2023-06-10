@@ -96,6 +96,7 @@ public class Algorithm {
         
         int i = 0;
         
+        // 어떻게 하지..
         while(true) {
         	
         	if(i==arrList.size()) break;
