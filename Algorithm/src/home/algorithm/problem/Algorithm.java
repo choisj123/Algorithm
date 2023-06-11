@@ -111,6 +111,7 @@ public class Algorithm {
         		num = "";
         		i -= p.length()+1;
         		
+        		
         		System.out.println(arrList);
         	} 	
         	
