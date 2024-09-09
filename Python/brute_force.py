@@ -13,6 +13,8 @@ for i in range(N - 1):
         my_comb.append((arr[i], arr[j]))
 print(my_comb) # [('A', 'B'), ('A', 'C'), ('B', 'C')]
 
+# 10C3 = 10*9*8 / (3*2*1)
+
 # 조합 내장 함수
 # cominations(리스트, 조합수)
 # import itertools
@@ -34,3 +36,5 @@ print(my_permu)
 # from itertools import combinations
 
 print(list(itertools.permutations(arr,2)))
+
+# 10P3 = 10 * 9 * 8
