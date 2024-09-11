@@ -1,3 +1,5 @@
+import random
+
 # list
 a = []
 b = list()
@@ -142,3 +144,153 @@ print(my_list)
 # 어떠한 자료형도 넣을 수 있습니다.
 # 자유롭게 변경이 가능하며 중복이 허용됩니다.
 
+
+scores = [60, 95, 75, 85, 90]
+
+print("1. 성적 보기") # 조회
+print("2. 최고 점수 보기") # max
+print("3. 최저 점수 보기") # min
+print("4. 낮은 점수순으로 정렬해서 보기") # 오름차순
+print("5. 높은 점수순으로 정렬해서 보기") # 내림차순
+print("6. 점수 뒤집어서 보기") # 리스트 뒤집기(index 슬라이싱)
+
+comm = int(input("무엇을 할까요?"))
+if comm == 1:
+    print("점수를 그대로 출력합니다.")
+    print(scores)
+elif comm == 2: # 최대값
+    # print(max(scores))
+
+    # 1. 최대값을 저장할 변수를 하나 만들어 배열의 첫 번째 값을 넣는다
+    max_score = scores[0]
+    # 2. 리스트의 값들과 하나하나 비교하면서 자신보다 큰 값을 만나면 그 값으로 변경한다
+    for s in scores[1:]:
+        if max_score < s:
+            max_score = s
+    # 3. 최종적으로 얻은 값이 최댓값
+    print(max_score)
+
+elif comm == 3: # 최소값
+    # print(min(scores))
+    
+    min_score = scores[0]
+    for s in scores[1:]:
+        if min_score > s:
+            min_score = s
+    print(min_score)
+
+elif comm == 4: # 오른차순
+    scores.sort() ## sort는 원본 자체를 변경
+    sorted_scores = sorted(scores) # 원본은 놔두고 정렬된 결과를 따로 얻고 싶을 때 사용
+    print(scores)
+elif comm == 5: # 내림차순
+    scores.sort(reverse=True)
+    sorted_scores = sorted(scores, reverse=True)
+    print(scores)
+
+elif comm == 6: # 리스트 뒤집기
+    print(scores[::-1])
+
+    scores.reverse()
+    print(scores)
+
+    reversed_scores = list(reversed(scores))
+    print(reversed_scores)
+    
+
+## 리스트로 퀴즈 프로그램 만들기
+
+
+i = 1
+score = 0
+
+while(i <= 5):
+    a = random.randint(1, 10)
+    b = random.randint(1, 10)
+
+    result = int(input(f'{a} * {b} = ?'))
+    if result == a * b:
+        score += 20
+        print("맞았습니다.")
+    else:
+        print("틀렸습니다.")
+    i += 1
+
+print(f"총 점수는 {score}점 입니다.")
+
+
+# for i in range(len(a)):
+#     result = int(input(f'{a[i]} * {b[i]} = ?'))
+#     if result == a[i] * b[i]:
+#         score += 20
+#         print("맞았습니다.")
+#     else:
+#         print("틀렸습니다.")
+# print(f"총 점수는 {score}점 입니다.")
+
+
+
+arr = [[3,6], [7,8], [2,9], [6,4], [9,3]]
+
+score = 0
+
+for a, b in arr:
+    result = int(input(f'{a} * {b} = ?'))
+    if result == a * b:
+        score += 20
+        print("맞았습니다.")
+    else:
+        print("틀렸습니다.")
+print(f"총 점수는 {score}점 입니다.")
+
+
+# 튜플
+tu1 = (1, 2, 3)
+tu2 = 4, 5, 6
+tu3 = ()
+tu4 = tuple()
+
+print(type(tu1), tu1)
+print(type(tu2), tu2)
+print(type(tu3), tu3)
+print(type(tu4), tu4)
+
+tup1 = (1)
+tup2 = (2,)
+tup3 = 3
+tup4 = 4,
+print(type(tup1), tup1) 
+print(type(tup2), tup2)
+print(type(tup3), tup3)
+print(type(tup4), tup4)
+
+# packing : 인자로 받은 여러 개의 값을 하나의 객체로 인식해서 사용할 수 있게 해줍니다.
+# unpacking : packing 반대 개념으로 여러 개의 인자가 있는 하나의 객체를 여러 개로 풀어줍니다.
+# 사실 packing과 unpacking은 리스트와 튜플 모두 사용할 수 있습니다. 
+# 그런데도 리스트가 아닌 튜플을 언급한 이유는 튜플 생성 시 소괄호가 아닌 콤마( , ) 만으로 구분할 수 있다고 했습니다. 
+# 그것을 통해 유연한 코딩이 가능합니다.
+
+
+gift = '장난감', '운동화'
+g1, g2 = gift # unpacking을 통해 gift를 풀어 각 변수에 대입
+print(g1) # 장난감
+print(g2) # 운동화
+print(gift) # ('장난감', '운동화')
+# 리스트나 튜플 앞에 *을 입력하면 unpacking 됩니다.
+print(*gift) # '장난감', '운동화'
+
+# 튜플인 gift를 사용해서 g1, g2에 각각 항목을 대입하였습니다. 
+# 대괄호를 사용해 리스트로 만들어도 똑같이 동작합니다. 
+# gift 앞에 * 을 붙여 unpacking 할 수도 있습니다.
+
+toy, *gift = '장난감', '운동화', '게임기'
+print(toy)
+print(*gift)
+
+
+# 두 값 바꾸기
+a = 10
+b = 20
+print(a,b)
+a, b = b, a
+print(a,b)
