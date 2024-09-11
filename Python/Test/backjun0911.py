@@ -1,3 +1,5 @@
+# 백준 1181
+
 # 1. input 받기
 N = int(input())
 arr = []
