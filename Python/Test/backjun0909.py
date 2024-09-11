@@ -1,3 +1,5 @@
+# 백준 2309
+
 import itertools
 
 ## 리스트
