@@ -7,7 +7,6 @@ arr = []
 for _ in range(5):
     arr.append(sys.stdin.readline().split())
 
-
 # 2. 사회자가 부르는 수 list 담기
 num = []
 for _ in range(5):
@@ -35,10 +34,10 @@ def check_row_bingo():
 # 5. 빙고 column 수를 확인하기 위한 함수 구현
 def check_column_bingo():
     count = 0
-    for j in range(5):
+    for i in range(5):
         is_bingo = True
-        for i in range(5):
-            if not check_board[i][j]:
+        for j in range(5):
+            if not check_board[j][i]:
                 is_bingo = False
                 break
         if is_bingo:
@@ -73,13 +72,16 @@ def check_diagonal_bingo():
 #    만족하는 빙고의 수를 확인
 for i in range(25):
     now_num = num[i]
+
     # 사회자가 부른 숫자의 빙고판 위치 확인하고 True로 표기
     for x in range(5):
         for y in range(5):
             if arr[x][y] == now_num:
                 check_board[x][y] = True
+
     # 빙고판 True로 체크한 이후 빙고 몇개 완성됐는지 확인
     count = check_row_bingo() + check_column_bingo() + check_diagonal_bingo()
+
     # 완성된 빙고의 개수가 3개 이상이라면 해당 순서 출력
     if count >= 3:
         print(i + 1)
